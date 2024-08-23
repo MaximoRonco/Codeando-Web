@@ -1,37 +1,94 @@
 /* Reset de estilos básicos */
 body, h1, h2, p, form, input, textarea, button {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-/* Contenedor principal */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+:root{
+    --color-primario: #494ba6;
+    --color-secundario: #8689ff;    ;
+    --color-alternativo: #494ba6;
+    --color-hover: #494ba6;;
+    --color-texto:#494ba6;
+    --color-fondo:#0e0f22;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    margin-bottom: 20px;
+/* Contenedor principal */
+.container {
+    width: 100%;
+    margin: 0 auto;
 }
+
+/* Estilos para el header */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-primario); /* Color de fondo del header */
+    padding: 20px 0; /* Espaciado superior e inferior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    height: 50px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Espacia entre el logo y la lista de navegación */
+    align-items: center;
+    width: 90%; /* Asegura que el contenido de la navegación no ocupe el ancho completo del header */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor de navegación */
+}
+
+  /* Estilos para el logo */
+.logo img {
+    max-height: 130px; /* Altura máxima del logo */
+    width: auto; /* Mantiene la proporción del logo */
+}
+
+  /* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del nav */
+}
+
+  /* Estilos para la lista de navegación */
+.nav-list {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Coloca los elementos de la lista en línea */
+    gap: 30px; /* Espacio entre los elementos de la lista */
+}
+
+  /* Estilos para los enlaces de la lista de navegación */
+.nav-list li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #ffffff; /* Color del texto de los enlaces */
+    font-size: 18px; /* Tamaño de fuente */
+    transition: color 0.3s ease; /* Transición para el efecto hover */
+}
+
+  /* Efecto hover para los enlaces */
+.nav-list li a:hover {
+    color: #007bff; /* Color del texto al pasar el ratón */
+}
+
 
 /* Sección de Banner */
 .banner {
-    background-color: #8b735f;
+    background-color: var(--color-secundario);
     color: white;
     padding: 50px 0;
     margin-bottom: 40px;
     text-align: center;
-    border-radius: 8px;
 }
 
 .banner h2 {
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
+    font-weight: 700; /* para asegurar el grosor bold */
 }
 
 .banner p {
@@ -131,3 +188,30 @@ body, h1, h2, p, form, input, textarea, button {
 .formulario-contacto button:hover {
     background-color: #705946;
 }
+
+
+/* Animacion */
+.quienes-somos {
+    position: relative; /* Para asegurarnos de que la animación funcione dentro del contenedor */
+    overflow: hidden; /* Para ocultar el contenido que se está animando desde abajo */
+  }
+  
+  .quienes-somos h2,
+  .quienes-somos p {
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%); /* Inicialmente, movemos el texto hacia abajo */
+    animation: slideUp 1s ease-out forwards; /* Aplica la animación para hacer que suba */
+  }
+  
+  .quienes-somos p {
+    animation-delay: 0.5s; /* Retrasa la animación del párrafo para que suba después del h2 */
+  }
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Mueve el texto hacia arriba a su posición original */
+    }
+  }
+  
