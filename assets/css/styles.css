@@ -9,7 +9,7 @@ body, h1, h2, p, form, input, textarea, button {
 
 :root{
     --color-primario: #494ba6;
-    --color-secundario: #8689ff;    ;
+    --color-secundario: #8689ff;    
     --color-alternativo: #494ba6;
     --color-hover: #494ba6;;
     --color-texto:#494ba6;
@@ -41,19 +41,18 @@ header {
     max-width: 1200px; /* Limita el ancho máximo del contenedor de navegación */
 }
 
-  /* Estilos para el logo */
 .logo img {
     max-height: 130px; /* Altura máxima del logo */
     width: auto; /* Mantiene la proporción del logo */
 }
 
-  /* Estilos para la navegación */
+/* Estilos para la navegación */
 nav {
     display: flex;
     justify-content: center; /* Centra los elementos dentro del nav */
 }
 
-  /* Estilos para la lista de navegación */
+/* Estilos para la lista de navegación */
 .nav-list {
     list-style: none; /* Elimina los puntos de la lista */
     padding: 0;
@@ -62,46 +61,115 @@ nav {
     gap: 30px; /* Espacio entre los elementos de la lista */
 }
 
-  /* Estilos para los enlaces de la lista de navegación */
+/* Estilos para los enlaces de la lista de navegación */
 .nav-list li a {
+    transform: scale(1.5) !important;
     text-decoration: none; /* Elimina el subrayado de los enlaces */
     color: #ffffff; /* Color del texto de los enlaces */
     font-size: 18px; /* Tamaño de fuente */
     transition: color 0.3s ease; /* Transición para el efecto hover */
 }
 
-  /* Efecto hover para los enlaces */
+/* Efecto hover para los enlaces */
 .nav-list li a:hover {
-    color: #007bff; /* Color del texto al pasar el ratón */
+    border-bottom: 2px solid white;
+    transform: scale(1.5) ;
+    transition: all 50ms;
 }
-
 
 /* Sección de Banner */
 .banner {
-    background-color: var(--color-secundario);
-    color: white;
+    background: linear-gradient(to top, rgb(255, 255, 255), var(--color-alternativo));
+    background-color: rgb(255, 255, 255);
+    color: rgb(41, 41, 41);
     padding: 50px 0;
     margin-bottom: 40px;
     text-align: center;
+    height: 500px !important;
+    width: 100%;
 }
 
 .banner h2 {
+    color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
-    font-weight: 700; /* para asegurar el grosor bold */
+    font-weight: bold; /* para asegurar el grosor bold */
+    font-size: 70px;
 }
 
 .banner p {
-    font-size: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.banner-content {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content img {
+    height: 500px;
+    margin-left: 100px;
+}
+
+.banner button {
+    height: 45px;
+    width: 150px;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none !important;
+    border-radius: 5px;
+    color: var(--color-texto);
+}
+
+.banner button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: all 300ms;
 }
 
 /* Sección de Quiénes Somos */
 .quienes-somos {
-    background-color: #f9f9f9;
+
+    display: flex;
+    height: auto;
+    background-color: white;
     padding: 20px;
     margin-bottom: 40px;
-    border-radius: 8px;
     text-align: center;
+    flex-direction: column;
+}
+
+.nosotros,
+.beneficios {
+    background-color: white;
+    width: 100%;
+}
+
+.beneficios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.beneficio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: auto;
+    margin: 10px 10px;
+}
+
+.beneficio img {
+    height: 50px;
 }
 
 .quienes-somos h2 {
@@ -114,8 +182,17 @@ nav {
 }
 
 /* Sección de Proyectos */
+.cont-proyectos {
+    display: flex;
+    flex-direction: column;
+}
+
 .proyectos {
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
 }
 
 .proyectos h2 {
@@ -130,88 +207,337 @@ nav {
     gap: 20px;
 }
 
+/* Estilos para el contenedor del proyecto */
 .proyecto {
+    position: relative; /* Necesario para posicionar absolutamente el overlay */
+    display: inline-block; /* Ajusta el ancho del contenedor al contenido */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    max-width: 360px; /* Ancho máximo */
+    height: 200px; /* Ajusta la altura según sea necesario */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    cursor: pointer; /* Cambia el cursor a pointer al pasar por el contenedor */
     background-color: #f5f5f5;
-    padding: 20px;
     text-align: center;
-    border: 1px solid #ccc;
     border-radius: 5px;
     transition: transform 0.3s;
 }
 
-.proyecto:hover {
-    transform: scale(1.05);
+.proyecto img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: 100%; /* Ajusta la imagen a la altura del contenedor */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionar */
 }
 
-/* Sección de Contacto */
+/* Estilos para el div que aparece en hover */
+.overlay {
+    position: absolute; /* Posiciona el overlay relativo al contenedor */
+    bottom: -100%; /* Coloca el div fuera de la vista en la parte inferior */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: #ffffff; /* Color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    transition: bottom 0.5s ease; /* Transición suave para el movimiento */
+    text-decoration: none;
+}
+
+/* Efecto hover en el contenedor */
+.proyecto:hover .overlay {
+    bottom: 0; /* Mueve el overlay hacia arriba cuando se hace hover */
+}
+
+.link-proyecto {
+    background-color: #494ba6;
+    width: 100%;
+}
+
+/* Estilos para la sección de contacto */
 .contacto {
-    background-color: #e9e9e9;
     padding: 20px;
-    border-radius: 8px;
+    background-color: #f9f9f9; /* Fondo claro para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra la sección */
 }
 
+/* Estilos para el título */
 .contacto h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333; /* Color del título */
 }
 
-/* Estilos del Formulario */
+/* Estilos para el formulario */
 .formulario-contacto {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 15px; /* Espacio entre los elementos */
 }
 
-.formulario-contacto label {
-    font-weight: bold;
-}
-
+/* Estilos para los campos de entrada */
 .formulario-contacto input,
 .formulario-contacto textarea {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px;
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Fondo blanco */
+    resize: vertical; /* Permite cambiar el tamaño vertical del textarea */
 }
 
+/* Estilos para el botón de enviar */
 .formulario-contacto button {
-    padding: 15px;
-    background-color: #8b735f;
-    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 4px;
+    background-color: var(--color-secundario); /* Color del botón */
+    color: #fff; /* Color del texto del botón */
+    font-size: 16px;
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
 .formulario-contacto button:hover {
-    background-color: #705946;
+    background-color: var(--color-primario); /* Color más oscuro al hacer hover */
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: #fff; /* Color del texto */
+    font-size: 16px;
+    text-decoration: none; /* Elimina el subrayado */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Color más oscuro al hacer hover */
+}
+
+.whatsapp-button i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Animación */
+.quienes-somos, #banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.quienes-somos h2,
+.quienes-somos p,
+.banner h2,
+.banner p,
+.banner button,
+.banner img {
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Asegura que la animación del párrafo tenga un retraso */
+.quienes-somos p {
+    animation-delay: 0.5s;
+}
+
+/* Nueva clase que se añade al final de la animación */
+.animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto hover para los botones */
+.banner button:hover {
+    background-color: var(--color-alternativo); /* Ejemplo: cambia el color de fondo al hacer hover */
+    color: white; /* Cambia el color del texto al hacer hover */
+}
+
+/* Keyframes de la animación */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#btnWpp {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin: 20px;
+    border: none;
+    color: white;
+    background-color: #25D366;
+    height: 50px;
+    width: 50px;
+    font-size: 40px;
+    border-radius: 100%;
+}
+
+#btnWpp:hover {
+    cursor: pointer;
+    background-color: #128C7E;
+    transition: all 300ms;
+}
+
+/* Media Queries para responsive design */
+@media (max-width: 1200px) {
+    .nav-container {
+        width: 100%; /* Ajusta el ancho del contenedor de navegación */
+    }
+
+    .banner-content img {
+        margin-left: 0; /* Ajusta el margen izquierdo en pantallas más pequeñas */
+    }
+
+    .banner button {
+        margin-left: 0; /* Ajusta el margen izquierdo en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-list {
+        flex-direction: column; /* Cambia la dirección de los elementos de la lista */
+        align-items: center; /* Centra los elementos de la lista */
+        gap: 15px; /* Reduce el espacio entre los elementos de la lista */
+    }
+
+    .nav-list li a {
+        font-size: 16px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .quienes-somos {
+        flex-direction: column;
+    }
+
+    .nosotros,
+    .beneficios {
+        width: 100%; /* Ajusta el ancho para que ocupe el 100% del contenedor */
+    }
+
+    .proyectos {
+        margin: 10px; /* Ajusta el margen en pantallas más pequeñas */
+    }
+
+    .proyecto {
+        width: 100%; /* Ajusta el ancho del proyecto para que ocupe el 100% del contenedor */
+        max-width: 100%; /* Elimina el ancho máximo para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner h2 {
+        font-size: 40px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .banner p {
+        font-size: 20px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .banner-content img {
+        height: auto; /* Permite que la imagen ajuste su altura automáticamente */
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas más pequeñas */
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+        font-size: 14px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .contacto {
+        padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    #btnWpp {
+        height: 40px;
+        width: 40px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: auto; /* Permite que la altura del banner ajuste automáticamente */
+        padding: 30px 0; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .banner h2 {
+        font-size: 30px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .banner p {
+        font-size: 18px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .contacto {
+        padding: 10px;
+        width: 100%; /* Ajusta el ancho del formulario para que ocupe el 100% del contenedor */
+    }
 }
 
 
-/* Animacion */
-.quienes-somos {
-    position: relative; /* Para asegurarnos de que la animación funcione dentro del contenedor */
-    overflow: hidden; /* Para ocultar el contenido que se está animando desde abajo */
-  }
-  
-  .quienes-somos h2,
-  .quienes-somos p {
-    position: relative;
-    opacity: 0;
-    transform: translateY(100%); /* Inicialmente, movemos el texto hacia abajo */
-    animation: slideUp 1s ease-out forwards; /* Aplica la animación para hacer que suba */
-  }
-  
-  .quienes-somos p {
-    animation-delay: 0.5s; /* Retrasa la animación del párrafo para que suba después del h2 */
-  }
-  
-  @keyframes slideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0); /* Mueve el texto hacia arriba a su posición original */
-    }
-  }
-  
+/*Footer */
+.footer {
+    background-color: #747474;
+    color: #fff;
+    padding: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--color-alternativo); /* Cambia el color a tu preferido */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #505050;
+    margin-top: 20px;
+}
