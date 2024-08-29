@@ -127,6 +127,17 @@ nav {
     color: var(--color-texto);
 }
 
+.banner button a{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.banner button a:hover{
+    color: white;
+}
+
 .banner button:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -135,8 +146,8 @@ nav {
 
 /* Sección de Quiénes Somos */
 .quienes-somos {
-
     display: flex;
+    align-items: center;
     height: auto;
     background-color: white;
     padding: 20px;
@@ -145,9 +156,20 @@ nav {
     flex-direction: column;
 }
 
-.nosotros,
-.beneficios {
+.nosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
+    width: 80%;
+}
+
+.nosotros h2{
+    margin-bottom:30px !important;
+}
+
+.beneficios {
     width: 100%;
 }
 
@@ -166,10 +188,30 @@ nav {
     background-color: white;
     height: auto;
     margin: 10px 10px;
+    font-weight: 600;
 }
 
-.beneficio img {
-    height: 50px;
+.beneficio i{
+    color: white;
+    background-color: var(--color-primario);
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 30px;
+    margin-right: 10px;
+    animation: pulse 2s infinite; /* Aplica la animación de pulso */
+}
+
+/* Definición de la animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamaño inicial */
+    }
+    50% {
+        transform: scale(1.1); /* Tamaño aumentado */
+    }
+    100% {
+        transform: scale(1); /* Tamaño final, vuelve al tamaño original */
+    }
 }
 
 .quienes-somos h2 {
@@ -182,51 +224,91 @@ nav {
 }
 
 /* Sección de Proyectos */
+
+#proyectos {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .cont-proyectos {
-    display: flex;
-    flex-direction: column;
-}
-
-.proyectos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 30px;
+    overflow: hidden; /* Oculta los elementos fuera del área visible del contenedor */
     width: 100%;
-    margin: 20px;
+    position: relative;
 }
 
-.proyectos h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.proyectos-carousel {
+    display: flex;
+    gap: 20px; /* Espacio entre proyectos */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Grid de Proyectos */
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-/* Estilos para el contenedor del proyecto */
 .proyecto {
-    position: relative; /* Necesario para posicionar absolutamente el overlay */
-    display: inline-block; /* Ajusta el ancho del contenedor al contenido */
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    max-width: 360px; /* Ancho máximo */
-    height: 200px; /* Ajusta la altura según sea necesario */
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    cursor: pointer; /* Cambia el cursor a pointer al pasar por el contenedor */
-    background-color: #f5f5f5;
-    text-align: center;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    min-width: 50%;
+    max-height: 300px; /* Establece una altura máxima para el contenedor del proyecto */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Asegura que las imágenes no se salgan del contenedor */
 }
 
 .proyecto img {
-    width: 100%; /* Ajusta la imagen al ancho del contenedor */
-    height: 100%; /* Ajusta la imagen a la altura del contenedor */
-    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionar */
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: 100%; /* Hace que la imagen ocupe todo el alto del contenedor */
+    object-fit: cover; /* Hace que la imagen cubra todo el área del contenedor sin distorsión */
+    display: block; /* Elimina el espacio inferior causado por las imágenes en línea */
 }
+
+.overlay {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.proyecto:hover .overlay {
+    display: flex; /* Muestra el overlay al pasar el ratón */
+}
+
+.btn-prev, .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.btn-prev {
+    left: 10px;
+}
+
+.btn-next {
+    right: 10px;
+}
+
+.btn-prev:hover {
+    background-color: var(--color-secundario);
+    transition: all 200ms;
+}
+
+.btn-next:hover {
+    background-color: var(--color-secundario);
+    transition: all 200ms;
+}
+
 
 /* Estilos para el div que aparece en hover */
 .overlay {
@@ -258,19 +340,42 @@ nav {
     background-color: #f9f9f9; /* Fondo claro para el formulario */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    max-width: 600px; /* Ancho máximo del formulario */
+    max-width: 1200px; /* Aumenta el ancho máximo para acomodar texto y formulario */
     margin: 0 auto; /* Centra la sección */
+    margin-bottom: 30px;
 }
 
 /* Estilos para el título */
 .contacto h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: #333; /* Color del título */
+}
+
+/* Contenedor para el texto y el formulario */
+.contacto-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espacio entre el texto y el formulario */
+}
+
+/* Estilos para el texto explicativo */
+.texto-contacto {
+    flex: 1;
+    padding-right: 20px; /* Espacio entre el texto y el formulario */
+    text-align: left;
+    font-size: 20px;
+    color: #333; /* Color del texto */
+}
+
+.texto-contacto h3{
+    font-size: 24px;
 }
 
 /* Estilos para el formulario */
 .formulario-contacto {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px; /* Espacio entre los elementos */
@@ -309,7 +414,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -327,6 +431,7 @@ nav {
 .whatsapp-button i {
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
+
 
 /* Animación */
 .quienes-somos, #banner {
@@ -381,7 +486,7 @@ nav {
     background-color: #25D366;
     height: 50px;
     width: 50px;
-    font-size: 40px;
+    font-size: 30px;
     border-radius: 100%;
 }
 
@@ -390,6 +495,7 @@ nav {
     background-color: #128C7E;
     transition: all 300ms;
 }
+
 
 /* Media Queries para responsive design */
 @media (max-width: 1200px) {
@@ -489,7 +595,7 @@ nav {
 
 /*Footer */
 .footer {
-    background-color: #747474;
+    background-color: #585858;
     color: #fff;
     padding: 20px 0;
     font-family: 'Montserrat', sans-serif;
@@ -541,3 +647,5 @@ nav {
     background-color: #505050;
     margin-top: 20px;
 }
+
+

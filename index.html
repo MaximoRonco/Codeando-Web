@@ -3,6 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En Codeando Web, somos un equipo de amigos especializados en crear páginas web personalizadas que reflejan la esencia de tu negocio y te ayudan a destacar en el mundo digital.">
+    <meta name="keywords" content="Desarrollo web, Diseño web, Páginas web personalizadas, Creación de sitios web, Optimización SEO, Soporte web">
+    <meta name="author" content="Codeando Web">
+    <meta name="copyright" content="Codeando Web">
+
+    <!-- Meta etiqueta para robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph meta tags para Facebook y otras redes sociales -->
+    <meta property="og:title" content="Codeando Web">
+    <meta property="og:description" content="Somos un equipo de amigos especializados en crear páginas web personalizadas, combinando diseño atractivo con funcionalidad para ayudarte a destacar en el mundo digital.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./img/logo.png">
+    <meta property="og:url" content="https://tu-sitio-web.com/">
+
+    <!-- Meta etiquetas de Twitter -->
+    <meta property="twitter:title" content="Codeando Web">
+    <meta property="twitter:description" content="Creamos páginas web personalizadas para reflejar la esencia de tu negocio y ayudarte a destacar en el mundo digital.">
+    <meta property="twitter:image" content="./img/logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tu-sitio-web.com/">
+
+
+
+    <link rel="icon" type="image/png" href="./assets/statics/5.png">
     <title>Codeando Web</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
@@ -30,8 +58,8 @@
                 <div class="texto-banner">
                     <h2>¡BIENVENIDOS <br> A CODEANDO WEB!</h2>
                     <p>Descubre nuestros proyectos destacados</p>
-                    <button>CONTACTAR</button>
-                    <button>PROYECTOS</button>
+                    <button><a href="#contacto">CONTACTAR</a></button>
+                    <button><a href="#proyectos">PROYECTOS</a></button>
                 </div>
                 <img src="./assets/statics/iphone15.png" alt="Imagen del Banner">
             </div>
@@ -40,21 +68,38 @@
         <section id="quienes-somos" class="quienes-somos">
             <div class="nosotros">
                 <h2>Quiénes Somos</h2>
-                <p>Somos una tienda dedicada a ofrecer los mejores productos para nuestros clientes. Nos enorgullece brindar un excelente servicio y productos de alta calidad.</p>
+                <p>Somos un equipo de amigos <strong> especializados en el desarrollo web</strong> . Nos enfocamos en crear <strong>páginas personalizadas</strong> que reflejan la esencia de cada cliente, combinando diseño atractivo con funcionalidad. Nuestra misión es ayudarte a <strong>destacar en el mundo digital</strong>, haciendo que tu presencia en línea sea única y memorable.</p>
             </div>
             <div class="beneficios">
-                <div class="benUno beneficio"><img src="https://unavatar.io/velocidad" alt="Beneficio Uno">Beneficio Uno</div>
-                <div class="benDos beneficio"><img src="https://unavatar.io/velocidad" alt="Beneficio Dos">Beneficio Dos</div>
-                <div class="benTres beneficio"><img src="https://unavatar.io/velocidad" alt="Beneficio Tres">Beneficio Tres</div>
+                <div class="benUno beneficio">
+                    <i class="fas fa-paint-brush"></i>
+                    Diseño personalizado y adaptativo
+                </div>
+                <div class="benDos beneficio">
+                    <i class="fas fa-search"></i>
+                    Optimización para motores de búsqueda (SEO)
+                </div>
+                <div class="benTres beneficio">
+                    <i class="fas fa-tools"></i>
+                    Soporte y mantenimiento continuo
+                </div>
+                
             </div>
         </section>
 
         <section id="proyectos" class="proyectos">
             <h2>Nuestros Proyectos</h2>
             <div class="cont-proyectos">
-                <div class="proyectos-grid">
+                <div class="proyectos-carousel">
                     <div class="proyecto">
-                        <img src="./assets/statics/notebookMockup.png" alt="Imagen del Proyecto">
+                        <img src="./assets/statics/notebook.png" alt="Imagen del Proyecto">
+                        <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
+                            Ver sitio
+                        </a>
+                    </div>
+                    
+                    <div class="proyecto">
+                        <img src="./assets/statics/notebook.png" alt="Imagen del Proyecto">
                         <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
                             Ver sitio
                         </a>
@@ -65,29 +110,30 @@
                             Ver sitio
                         </a>
                     </div>
-                    <div class="proyecto">
-                        <img src="./assets/statics/notebookMockup.png" alt="Imagen del Proyecto">
-                        <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
-                            Ver sitio
-                        </a>
-                    </div>
-                    <!-- Puedes repetir el bloque de proyecto con diferentes imágenes y enlaces -->
+                    <!-- Repite los bloques de proyectos según sea necesario -->
                 </div>
             </div>
         </section>
+        
 
         <section id="contacto" class="contacto">
             <h2>Contacto</h2>
-            <form action="#" method="POST" class="formulario-contacto">
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-                <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> Consulta Rápida
-            </a>
+            <div class="contacto-contenido">
+                <div class="texto-contacto">
+                    <h3>¿Queres saber más? </h3><p>No dudes en contactarnos. Estamos aquí para ayudarte con cualquier consulta sobre nuestros servicios de desarrollo web. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                </div>
+                <form action="#" method="POST" class="formulario-contacto">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                    <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consulta Rápida
+                    </a>
+                </form>
+            </div>
         </section>
+        
 
         <button id="btnWpp"><i class="fab fa-whatsapp"></i></button>
     </div>
