@@ -22,6 +22,10 @@ body, h1, h2, p, form, input, textarea, button {
     margin: 0 auto;
 }
 
+section{
+    margin-bottom: 125px !important;
+}
+
 /* Estilos para el header */
 header {
     width: 100%;
@@ -89,6 +93,11 @@ nav {
     width: 100%;
 }
 
+h2{
+    color: var(--color-primario);
+    font-size: 35px;
+}
+
 .banner h2 {
     color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
@@ -131,7 +140,8 @@ nav {
     width: 100%;
     height: 100%;
     padding: 10px;
-    text-decoration: none;
+    text-decoration: none !important;
+    color: var(--color-primario);
 }
 
 .banner button a:hover{
@@ -152,10 +162,18 @@ nav {
     background-color: white;
     padding: 20px;
     margin-bottom: 40px;
-    text-align: center;
+    
     flex-direction: column;
 }
 
+#div-quienes{
+    display: flex;
+    margin-top: 50px;
+}
+
+#div-quienes img{
+    height: 350px !important;
+}
 .nosotros{
     display: flex;
     justify-content: center;
@@ -169,25 +187,25 @@ nav {
     margin-bottom:30px !important;
 }
 
-.beneficios {
-    width: 100%;
+.contenido-quienes{
+    margin-left: 40px;
 }
 
 .beneficios{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .beneficio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.103);
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.233); /* Sombra suave */
+    border-radius: 8px;
     height: auto;
-    margin: 10px 10px;
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
@@ -231,7 +249,7 @@ nav {
 }
 
 .cont-proyectos {
-    margin-top: 30px;
+    margin-top: 50px;
     overflow: hidden; /* Oculta los elementos fuera del área visible del contenedor */
     width: 100%;
     position: relative;
@@ -349,7 +367,7 @@ nav {
 .contacto h2 {
     text-align: center;
     margin-bottom: 50px;
-    color: #333; /* Color del título */
+    color: var(--color-primario); /* Color del título */
 }
 
 /* Contenedor para el texto y el formulario */
@@ -358,6 +376,7 @@ nav {
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px; /* Espacio entre el texto y el formulario */
+    margin-top: 50px;
 }
 
 /* Estilos para el texto explicativo */
