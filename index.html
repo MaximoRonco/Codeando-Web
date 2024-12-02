@@ -115,12 +115,12 @@
                             <p>Sitio web de ventas de Neumáticos</p>
                         </a>
                     </div>
-                    <div class="proyecto">
+                    <!--<div class="proyecto">
                         <img src="./assets/statics/notebookMockup.png" alt="Imagen del Proyecto">
                         <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
                             <p>Sitio web para Restaurante en Miami</p>
                         </a>
-                    </div>
+                    </div>-->
                     <!-- Repite los bloques de proyectos según sea necesario -->
                 </div>
             </div>
@@ -131,12 +131,16 @@
             <h2>Contáctanos</h2>
             <div class="contacto-contenido">
                 <div class="texto-contacto">
-                    <h3>¿Queres saber más? </h3><p>No dudes en contactarnos. Estamos aquí para ayudarte con cualquier consulta sobre nuestros servicios de desarrollo web. Dejanos una descripcion de la pagina web que necesitas y nos pondremos en contacto contigo lo antes posible.</p>
+                    <h3>¿Quieres saber más?</h3>
+                    <p>No dudes en contactarnos. Estamos aquí para ayudarte con cualquier consulta sobre nuestros servicios de desarrollo web. Déjanos una descripción de la página web que necesitas y nos pondremos en contacto contigo lo antes posible.</p>
                 </div>
-                <form action="#" method="POST" class="formulario-contacto">
+                <!-- Actualiza el action con la URL de Formspree -->
+                <form action="https://formspree.io/f/xqakwwlz" method="POST" class="formulario-contacto">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                     <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-                    <textarea id="mensaje" name="mensaje" placeholder="Describe la pagina web que necesitas" required></textarea>
+                    <textarea id="mensaje" name="mensaje" placeholder="Describe la página web que necesitas" required></textarea>
+                    <!-- Puedes agregar un campo oculto de email para obtener confirmaciones si lo deseas -->
+                    <input type="email" name="_replyto" style="display: none;">
                     <button type="submit">Enviar</button>
                     <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
                         <i class="fab fa-whatsapp"></i> Consulta Rápida
@@ -144,6 +148,7 @@
                 </form>
             </div>
         </section>
+        
         
 
         <button id="btnWpp"><i class="fab fa-whatsapp"></i></button>

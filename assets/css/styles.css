@@ -568,6 +568,10 @@ h2{
 }
 
 @media (max-width: 768px) {
+    .banner button{
+        margin-left: 15px;
+    }
+
     .banner h2 {
         font-size: 40px; /* Reduce el tamaño de fuente en pantallas más pequeñas */
     }
