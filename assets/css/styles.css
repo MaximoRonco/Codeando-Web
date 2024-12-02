@@ -568,8 +568,11 @@ h2{
 }
 
 @media (max-width: 768px) {
-    .banner button{
-        margin-left: 15px;
+    #btn-contacto{
+        margin-right: 6px !important;
+    }
+    #btn-proyecto{
+        margin-left: 6px !important;
     }
 
     .banner h2 {
