@@ -30,3 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.cont-proyectos').appendChild(btnPrev);
     document.querySelector('.cont-proyectos').appendChild(btnNext);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        const navList = document.getElementById('nav-list');
+        navList.classList.toggle('active');
+    });
+});
+

@@ -45,7 +45,11 @@
                         <img src="./assets/statics/LogoBlanco.png" alt="Logo" />
                     </a>
                 </div>
-                <ul class="nav-list">
+                <!-- Botón hamburguesa -->
+                <button class="menu-toggle" id="menu-toggle">
+                    &#9776; <!-- Ícono de menú (puedes usar un ícono de FontAwesome si prefieres) -->
+                </button>
+                <ul class="nav-list" id="nav-list">
                     <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#quienes-somos">Quiénes Somos</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
@@ -69,9 +73,9 @@
             <div class="nosotros">
                 <h2>Quiénes Somos</h2>
                 <div id="div-quienes">
-                    <img src="./assets/statics/logoTransparente.png" alt="">
+                    <img src="./assets/statics/logo.png" alt="">
                     <div class="contenido-quienes">
-                        <p>Somos un equipo de amigos <strong> especializados en el desarrollo web</strong> . Nos enfocamos en crear <strong>páginas personalizadas</strong> que reflejan la esencia de cada cliente, combinando diseño atractivo con funcionalidad. Nuestra misión es ayudarte a <strong>destacar en el mundo digital</strong>, haciendo que tu presencia en línea sea única y memorable.</p>
+                        <p>Somos un equipo <strong> especializado en el desarrollo web</strong> . Nos enfocamos en crear <strong>páginas personalizadas</strong> que reflejan la esencia de cada cliente, combinando diseño atractivo con funcionalidad. Nuestra misión es ayudarte a <strong>destacar en el mundo digital</strong>, haciendo que tu presencia en línea sea única y memorable.</p>
                         <div>
                             <div class="beneficios">
                                 <div class="benUno beneficio">
@@ -101,20 +105,20 @@
                     <div class="proyecto">
                         <img src="./assets/statics/notebook.png" alt="Imagen del Proyecto">
                         <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
-                            Ver sitio
+                            <p>Sitio web para Restaurante en Miami</p>
                         </a>
                     </div>
                     
                     <div class="proyecto">
-                        <img src="./assets/statics/notebook.png" alt="Imagen del Proyecto">
-                        <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
-                            Ver sitio
+                        <img src="./assets/statics/cardelli.png" alt="Imagen del Proyecto">
+                        <a href="https://cardelli-neumaticos.vercel.app/index.html" class="overlay" target="_blank">
+                            <p>Sitio web de ventas de Neumáticos</p>
                         </a>
                     </div>
                     <div class="proyecto">
                         <img src="./assets/statics/notebookMockup.png" alt="Imagen del Proyecto">
                         <a href="https://arremiami.vercel.app/" class="overlay" target="_blank">
-                            Ver sitio
+                            <p>Sitio web para Restaurante en Miami</p>
                         </a>
                     </div>
                     <!-- Repite los bloques de proyectos según sea necesario -->
@@ -124,15 +128,15 @@
         
 
         <section id="contacto" class="contacto">
-            <h2>Contacto</h2>
+            <h2>Contáctanos</h2>
             <div class="contacto-contenido">
                 <div class="texto-contacto">
-                    <h3>¿Queres saber más? </h3><p>No dudes en contactarnos. Estamos aquí para ayudarte con cualquier consulta sobre nuestros servicios de desarrollo web. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                    <h3>¿Queres saber más? </h3><p>No dudes en contactarnos. Estamos aquí para ayudarte con cualquier consulta sobre nuestros servicios de desarrollo web. Dejanos una descripcion de la pagina web que necesitas y nos pondremos en contacto contigo lo antes posible.</p>
                 </div>
                 <form action="#" method="POST" class="formulario-contacto">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                     <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-                    <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+                    <textarea id="mensaje" name="mensaje" placeholder="Describe la pagina web que necesitas" required></textarea>
                     <button type="submit">Enviar</button>
                     <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
                         <i class="fab fa-whatsapp"></i> Consulta Rápida
@@ -159,16 +163,18 @@
     
             <!-- Información de contacto -->
             <div class="footer-section">
-                <h3>Contacto</h3>
-                <p>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></p>
+                <h3>Contáctanos</h3>
+                <p>Teléfono: <a href="tel:+3572503289">+54 9 3572 50-3289 | +54 9 3572 53-8967</a></p>
                 <p>Email: <a href="mailto:info@codeandoweb.com">info@codeandoweb.com</a></p>
             </div>
     
             <!-- Redes sociales -->
             <div class="footer-section">
                 <h3>Síguenos</h3>
-                <a href="https://instagram.com/codeandoweb" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/company/codeandoweb" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <div id="redes-footer">
+                    <a href="https://instagram.com/codeandoweb" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/codeandoweb" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     
