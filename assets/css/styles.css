@@ -755,9 +755,7 @@ h2{
 
 @media (max-width: 768px) {
 
-    #proyectos{
-        margin-left: 20px;
-    }
+
 
     .banner-content img {
         display: none; /* Oculta la imagen */
@@ -831,9 +829,7 @@ h2{
     }
 
     /* Ajusta el párrafo */
-    .quienes-somos{
-        margin-left: 20px;
-    }
+    
     .quienes-somos p {
         font-size: 16px; /* Reduce el tamaño de fuente */
     }
@@ -1129,7 +1125,6 @@ h2{
     /* Ajusta el contacto */
     #contacto {
         width: 95%;
-        margin-left: 20px;
     }
 
     .contacto-contenido {
@@ -1223,9 +1218,6 @@ h2{
     }
 
     /* Ajuste para el banner */
-    .banner {
-        margin-bottom: 20px !important;
-    }
 
 
 }
