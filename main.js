@@ -38,3 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.getElementById("btnWpp").addEventListener("click", function () {
+    const phoneNumber = "3572503289"; // Tu número de WhatsApp
+    const url = `https://wa.me/${phoneNumber}`;
+    window.open(url, "_blank"); // Abre en una nueva pestaña
+});
